@@ -45,9 +45,9 @@ function checkGuess() {
   }
 
   if (guess !== targetNumber) {
-    if (guess < targetNumber && guess > 0) {
+    if (guess < targetNumber && guess >=1) {
       tooLowMessage.style.display = '';
-    } else if (guess > targetNumber && guess < 99){
+    } else if (guess > targetNumber && guess <= 99){
       tooHighMessage.style.display = '';
     } 
 
@@ -63,8 +63,8 @@ function checkGuess() {
   }
 
  //stretch Goal--->
-  if (guess < 0 || guess > 99){
-    if (guess < 0){
+  if (guess <= 0 || guess > 99){
+    if (guess <= 0){
     negativeNumMessage.style.display = '';
     } else {
     overHundredMessage.style.display = '';
@@ -104,7 +104,7 @@ function setup() {
   guessInput.disabled = false;
 
   hideAllMessages();
-  resetButton.style.display = '';
+  resetButton.style.display = 'none';
 }
 
 submitButton.addEventListener('click', checkGuess);
